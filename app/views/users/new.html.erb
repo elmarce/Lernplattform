@@ -1,0 +1,28 @@
+<h3>Neuen Benutzer anlegen</h3>
+<div id="registrieren">
+	<fieldset id="reg_fieldset"> 
+		<legend>Userdetails</legend>
+			<%= form_for(@user) do |f| %>
+			<% if @user.errors.any? %>
+					<ul>
+						<% @user.errors.full_messages.each do |msg| %>
+								<li><%= msg %></li>
+						<% end %>
+				</ul>
+			<% end %>
+				<p>
+					<%= f.label :email %>
+					<%= f.text_field :email, :size => 15, :maxlength => 30 %>
+				</p>
+				<p>
+					<%= f.label :password %>
+					<%= f.password_field :password, :size => 15, :maxlength => 30 %>
+				</p>
+				<p>
+					<%= f.label :password_confirmation, :size => 15, :maxlength => 30 %>
+					<%= f.password_field :password_confirmation, :size => 15, :maxlength => 30 %>
+				</p>
+				<p><%= submit_tag "Registrieren", :class => "submit" %></p>
+		<% end %>
+	</fieldset>
+</div>
