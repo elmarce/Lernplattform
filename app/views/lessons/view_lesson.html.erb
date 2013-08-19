@@ -1,0 +1,25 @@
+<div id="container">
+	<div id="header"> 
+		<p>Herzlich Willkommen</p>
+	</div>
+	<div id="haupt_navi">
+	 Navigation
+	</div>
+	<div id="anzeige"> 
+		<h1>choosed Lesson </h1>
+		<p>
+		<%= @lesson.thema %>
+		</p>
+		<p>
+			<%= @lesson.content %>
+		</p>
+		<p>
+			<%= link_to "zurück zur Liste", lessons_path%>
+		</p>
+		
+	</div>
+	<div id="footer"> 
+		<p>footer</p>
+	</div>
+
+</div>

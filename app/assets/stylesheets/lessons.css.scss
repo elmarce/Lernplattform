@@ -1,0 +1,57 @@
+// Place all the styles related to the lessons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+	padding: 10px 0;
+	background-color: #ddd;
+
+}
+#container{
+	width: 800px;
+	margin: 0 auto;
+	background-color:  #FFFFFF;
+	min-height: 200px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border: 1px solid;
+
+}
+#haupt_navi{
+	width: 150px;
+	float: left;
+	background-color:  #FFFFFF;
+	clear: both;
+
+	
+}
+#anzeige{
+	float: right;
+	width: 648px;
+	background-color: #FFFFFF;
+	border-left: 1px dotted;
+
+	
+}
+#header{
+	width: 800px;
+	background-color: #33CCFF;
+	heigh: 10px;
+	vertical-align: bottom;
+	display: inline-block;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+
+
+
+}
+#footer{
+	width: 800px;
+	background-color: #33CCFF;
+	vertical-align: bottom;
+	display: inline-block;
+	
+
+
+
+}

@@ -1,0 +1,20 @@
+<div id="container">
+	<div id="header"> 
+		<p>Herzlich Willkommen</p>
+	</div>
+	<div id="haupt_navi">
+	 Navigation
+	</div>
+	<div id="anzeige"> 
+		<h1>Lessonslist</h1>
+		<% anzahl = Lesson.all.count%>
+		<% (1..anzahl).each do |i|%>
+		<%= Lesson.find(i).thema %> |<%= link_to ":lesen", lesson_path(i) %>| 
+		<%= link_to " pdf", lesson_path(i, format: "pdf") %><br>
+		<% end %>
+	</div>
+	<div id="footer"> 
+		<p>footer</p>
+	</div>
+
+</div>
