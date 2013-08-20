@@ -1,0 +1,19 @@
+<div id="container">
+	<div id="header"> 
+		<p>Herzlich Willkommen</p>
+	</div>
+	<div id="haupt_navi">
+	 Navigation
+	</div>
+	<div id="anzeige"> 
+		<h1>Questions</h1>
+		<% @questions.each do |question| %>
+		<%= question.content %>
+		
+		<% end %>
+	</div>
+	<div id="footer"> 
+		<p>footer</p>
+	</div>
+
+</div>

@@ -13,6 +13,11 @@
 		<p>
 			<%= @lesson.content %>
 		</p>
+
+		<p>
+			<%= link_to "Test", lesson_tests_path(@lesson) %>
+		</p>
+
 		<p>
 			<%= link_to "zurück zur Liste", lessons_path%>
 		</p>

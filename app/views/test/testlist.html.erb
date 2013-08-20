@@ -7,12 +7,15 @@
 	</div>
 	<div id="anzeige"> 
 		<h1>Testlist </h1>
-		<% anzahl = Test.all.count%>
-		<% (1..anzahl).each do |i|%>
+		<% anzahl = Lesson.all.count%>
+		<% (6..anzahl).each do |i|%>
 		<p>
-		<%= Test.find(i).name  %> <%= ["Level :",  Test.find(i).level] %> <%= link_to " Fragen", test_questions_path(i) %>
+		<%= Test.find_by_lesson_id(i).name  %> <%= ["Level :",  Test.find_by_lesson_id(i).level] %> <%= link_to " Fragen", test_questions_path(i) %>
 		</p>
 		<% end %>
+
+
+		<%#= @lesson.test %>
 	</div>
 	<div id="footer"> 
 		<p>footer</p>

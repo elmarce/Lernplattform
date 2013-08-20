@@ -4,12 +4,13 @@ class TestController < ApplicationController
   end
 
   def show_test
-  	@test = Test.all
+
   	
   end
 
   def questions
-
+   @test = Test.find(params[:id])
+   @questions = @test.questions
   end
 
   def evaluation
@@ -17,6 +18,6 @@ class TestController < ApplicationController
 
   private
 		def test_params
-			params.require(:test).permit("name", "level")
+			params.require(:test).permit("name", "level", "lesson_id")
 		end
 end

@@ -1,0 +1,28 @@
+<div id="container">
+	<div id="header"> 
+		<p>Herzlich Willkommen</p>
+	</div>
+	<div id="haupt_navi">
+	 Navigation
+	</div>
+	<div id="anzeige"> 
+		<h1>Testlist </h1>
+		<% @tests.each do |test| %>
+		<%= link_to  test.name, questions_path(@lesson,test) %>| Level: <%= test.level%>
+		<%# anzahl = Lesson.all.count%>
+		<%# (6..anzahl).each do |i|%>
+		<p>
+		<%# Test.find_by_lesson_id(i).name  %> 
+		<%# ["Level :",  Test.find_by_lesson_id(i).level] %>
+		
+		</p>
+		<% end %>
+
+
+		<%#= @lesson.test %>
+	</div>
+	<div id="footer"> 
+		<p>footer</p>
+	</div>
+
+</div>

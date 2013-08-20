@@ -28,6 +28,15 @@ class LessonsController < ApplicationController
   def view_evaluation
   end
 
+  def tests
+    @lesson = Lesson.find(params[:id])
+    @tests = @lesson.tests
+  end
+
+  def questions
+    @test = tests.find(params[:test_id])
+    @questions = @test.questions
+  end
 
 	private
 		def lesson_params
@@ -41,5 +50,11 @@ class LessonsController < ApplicationController
             redirect_to login_path,
             alert: "Bitte melden Sie sich zuerst an."
           end
+    end
+
+
+    private
+    def test_params
+      params.require(:tests).permit("name", "level", "lesson_id")
     end
 end
