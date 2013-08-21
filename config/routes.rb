@@ -1,4 +1,13 @@
 Demo::Application.routes.draw do
+  #get "questions/show_questions"
+  #get "questions/update_questions"
+  get "answer/new_answer"
+  get "answer/show_answers"
+  
+  get "test/new_test"
+  get "test/questions"
+  get "test/evaluation"
+  get "test/testlist"
   get "login/show_login"
   get "login" => "login#create_login", as: "create_login"
   
@@ -14,10 +23,18 @@ Demo::Application.routes.draw do
   #resources :lessons
   get "lessons" => "lessons#view_lessonsList", as: "lessons"
   
+  get "lessons/:id/tests" => "lessons#tests", as: "lesson_tests"
+
+  #get "test/:id/questions" => "questions#show_questions", as: "test_questions"
   get "lessons/:id" => "lessons#view_lesson", as: "lesson"
+  get "lessons/:id/tests/:test_id/questions" => "lessons#questions", as: "questions"
+
+  get "lessons/:id/tests/:test_id/questions" => "lessons#answers", as: "answers"
 
   get "lessons/view_test"
   get "lessons/view_evaluation"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

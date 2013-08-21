@@ -2,16 +2,40 @@
 	<div id="header"> 
 		<p>Herzlich Willkommen</p>
 	</div>
-	<div id="haupt_navi">
-	 Navigation
-	</div>
+		<div id="haupt_navi">
+	 		Navigation
+		</div>
 	<div id="anzeige"> 
 		<h1>Questions</h1>
-		<% @questions.each do |question| %>
-		<%= question.content %>
 		
+		<% @questions.each do |question| %>
+		<h4>
+		<%= question.content %>
+		<%#= debug question.answers %>
+		</h4>
+		
+		
+			<% question.answers.each do |q| %>
+			<form action="#" method="get">
+			<input type="checkbox" name="answer" value="Answers">
+			<%= q.answer %> <br>
+
+			
+		</form>
+			<% end %>
+		
+
+		
+
 		<% end %>
+		<input type="submit" value="Bewerten">
+
+
+
+		
+		
 	</div>
+
 	<div id="footer"> 
 		<p>footer</p>
 	</div>

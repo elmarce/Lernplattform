@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130819113055) do
+ActiveRecord::Schema.define(version: 20130819202926) do
+
+  create_table "answers", force: true do |t|
+    t.text     "answer"
+    t.boolean  "correct"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "question_id"
+  end
 
   create_table "lessons", force: true do |t|
     t.string   "thema"
@@ -21,11 +29,20 @@ ActiveRecord::Schema.define(version: 20130819113055) do
     t.datetime "updated_at"
   end
 
+  create_table "questions", force: true do |t|
+    t.text     "content"
+    t.string   "autor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "test_id"
+  end
+
   create_table "tests", force: true do |t|
     t.string   "name"
     t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lesson_id"
   end
 
   create_table "users", force: true do |t|

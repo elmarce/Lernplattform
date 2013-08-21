@@ -26,6 +26,8 @@ class LessonsController < ApplicationController
   end
 
   def view_evaluation
+    @question = questions.find(params[:question_id])
+    @answers = @question.answers
   end
 
   def tests
@@ -36,6 +38,14 @@ class LessonsController < ApplicationController
   def questions
     @test = tests.find(params[:test_id])
     @questions = @test.questions
+    
+    
+  end
+
+  def answers
+    @question = questions.find(params[:question_id])
+    @answers  = @question.answers
+    
   end
 
 	private
@@ -55,6 +65,10 @@ class LessonsController < ApplicationController
 
     private
     def test_params
-      params.require(:tests).permit("name", "level", "lesson_id")
+      params.require(:test).permit("name", "level", "lesson_id")
+    end
+
+    def question_params
+      params.require(:question).permit("content", "autor", "test_id")
     end
 end
